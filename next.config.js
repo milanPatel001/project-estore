@@ -2,7 +2,7 @@
 const nextConfig = {
   swcMinify: true,
   images: {
-    domains: ["fakestoreapi.com", "www.citypng.com"],
+    domains: ["fakestoreapi.com", "www.citypng.com", "links.papareact.com"],
   },
 };
 
