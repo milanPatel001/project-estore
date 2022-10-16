@@ -5,7 +5,7 @@ import CheckoutProduct from "../components/CheckoutProduct";
 import Header from "../components/Header";
 import { selectItems, selectTotal } from "../slices/basketSlice";
 
-function checkout() {
+function Checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
 
@@ -70,4 +70,4 @@ function checkout() {
   );
 }
 
-export default checkout;
+export default Checkout;
