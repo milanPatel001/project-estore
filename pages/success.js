@@ -18,8 +18,8 @@ function Success() {
             </h1>
           </div>
           <p>
-            Thank you for shopping with us. We'll send a confirmation once your
-            item has shipped. If you would like to check the status of your
+            Thank you for shopping with us. We will send a confirmation once
+            your item has shipped. If you would like to check the status of your
             order, please press the button below.
           </p>
           <button
