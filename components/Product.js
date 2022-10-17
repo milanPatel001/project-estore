@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../slices/basketSlice";
@@ -8,9 +8,7 @@ const MIN_RATING = 1;
 const MAX_RATING = 5;
 
 function Product({ id, title, price, description, category, image }) {
-  const [rating] = useState(
-    Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-  );
+  const [rating, setRating] = useState(0);
 
   const dispatch = useDispatch();
 
@@ -29,6 +27,14 @@ function Product({ id, title, price, description, category, image }) {
     dispatch(addToBasket(product));
   };
 
+  useEffect(() => {
+    setRating(
+      Math.floor(
+        Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+      )
+    );
+  }, []);
+
   return (
     <div className="flex flex-col relative m-5 bg-white z-30 p-10">
       <p className="absolute top-2 right-2 text-xs italic text-gray-400 my-3">
@@ -41,7 +47,7 @@ function Product({ id, title, price, description, category, image }) {
         {Array(rating)
           .fill()
           .map((_, i) => (
-            <StarIcon key={id} className="h-5 text-yellow-500" />
+            <StarIcon key={i} className="h-5 text-yellow-500" />
           ))}
       </div>
 
